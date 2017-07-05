@@ -101,7 +101,7 @@ abstract class Tile extends Position{
 		self::registerTile(Sign::class);
 		self::registerTile(Skull::class);
 		
-		self::registerTiel(ShulkerBox::class);
+		self::registerTile(ShulkerBox::class);
 	}
 
 	/**

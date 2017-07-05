@@ -60,5 +60,8 @@ class ShulkerBox extends Solid{
 			15 => "Black Shulker Box",
 		];
 		return $names[$this->meta & 0x0f];
+		
+		   $player->addWindow($chest->getInventory());
+		}
 	}
 }

@@ -22,6 +22,7 @@
 namespace pocketmine\block;
 
 use pocketmine\item\Tool;
+use pocketmine\Player;
 
 class ShulkerBox extends Solid{
 	

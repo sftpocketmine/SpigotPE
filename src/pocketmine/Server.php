@@ -790,6 +790,7 @@ class Server{
 			//new ByteTag("SpawnForced", 1), //TODO
 			new ListTag("Inventory", []),
 			new ListTag("EnderChestInventory", []),
+			new ListTag("ShulkerBoxInventory", []),
 			new CompoundTag("Achievements", []),
 			new IntTag("playerGameType", $this->getGamemode()),
 			new ListTag("Motion", [
@@ -813,6 +814,7 @@ class Server{
 		$nbt->Pos->setTagType(NBT::TAG_Double);
 		$nbt->Inventory->setTagType(NBT::TAG_Compound);
 		$nbt->EnderChestInventory->setTagType(NBT::TAG_Compound);
+		$nbt->ShulkerBoxInventory->setTagType(NBT::TAG_Compound);
 		$nbt->Motion->setTagType(NBT::TAG_Double);
 		$nbt->Rotation->setTagType(NBT::TAG_Float);
 

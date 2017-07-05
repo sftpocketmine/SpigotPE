@@ -40,7 +40,9 @@ class InventoryType{
     const HOPPER = 12;
 	const ENDER_CHEST = 13;
 	const BEACON = 14;
+	const SHULKER_BOX = 15;
     const PLAYER_FLOATING = 254;//#TODO
+	
 	private static $default = [];
 	private $size;
 	private $title;
@@ -75,6 +77,7 @@ class InventoryType{
 			static::HOPPER => new InventoryType(5, "Hopper", WindowTypes::HOPPER), //5 CONTAINER
 			static::ENDER_CHEST => new InventoryType(27, "Ender Chest", WindowTypes::CONTAINER),
 			static::BEACON => new InventoryType(0, "Beacon", WindowTypes::BEACON),
+			static::SHULKER_BOX => new InventoryType(27, "Shulker Box", WindowTypes::CONTAINER),
 		];
 	}
 	/**

@@ -23,22 +23,27 @@ declare(strict_types=1);
 
 namespace pocketmine\inventory;
 
-use pocketmine\item\Item;
-use pocketmine\utils\UUID;
+use pocketmine\level\Position;
+use pocketmine\Player;
 
-interface Recipe{
-
-	/**
-	 * @return Item
-	 */
-	public function getResult();
-
-	public function registerToCraftingManager();
+class AnvilInventory extends ContainerInventory{
+	public function __construct(Position $pos){
+		parent::__construct(new FakeBlockMenu($this, $pos), InventoryType::get(InventoryType::ANVIL));
+	}
 
 	/**
-	 * @return UUID
+	 * @return FakeBlockMenu
 	 */
-	public function getId();
+	public function getHolder(){
+		return $this->holder;
+	}
 
-	public function setId(UUID $id);
+	public function onClose(Player $who){
+		parent::onClose($who);
+
+		for($i = 0; $i < 2; ++$i){
+			$this->getHolder()->getLevel()->dropItem($this->getHolder()->add(0.5, 0.5, 0.5), $this->getItem($i));
+			$this->clear($i);
+		}
+	}
 }

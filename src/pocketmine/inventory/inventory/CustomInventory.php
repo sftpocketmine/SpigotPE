@@ -23,22 +23,9 @@ declare(strict_types=1);
 
 namespace pocketmine\inventory;
 
-use pocketmine\item\Item;
-use pocketmine\utils\UUID;
+/**
+ * All plugins that want to create their custom inventory should use this class as a base
+ */
+abstract class CustomInventory extends ContainerInventory{
 
-interface Recipe{
-
-	/**
-	 * @return Item
-	 */
-	public function getResult();
-
-	public function registerToCraftingManager();
-
-	/**
-	 * @return UUID
-	 */
-	public function getId();
-
-	public function setId(UUID $id);
 }

@@ -23,22 +23,19 @@ declare(strict_types=1);
 
 namespace pocketmine\inventory;
 
-use pocketmine\item\Item;
-use pocketmine\utils\UUID;
+/**
+ * Saves all the information regarding default inventory sizes and types
+ */
+interface SlotType{
+	const RESULT = 0;
 
-interface Recipe{
+	const CRAFTING = 1; //Not used in Minecraft: PE yet
 
-	/**
-	 * @return Item
-	 */
-	public function getResult();
+	const ARMOR = 2;
 
-	public function registerToCraftingManager();
+	const CONTAINER = 3;
 
-	/**
-	 * @return UUID
-	 */
-	public function getId();
+	const HOTBAR = 4;
 
-	public function setId(UUID $id);
+	const FUEL = 5;
 }

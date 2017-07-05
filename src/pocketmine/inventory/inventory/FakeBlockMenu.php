@@ -23,22 +23,18 @@ declare(strict_types=1);
 
 namespace pocketmine\inventory;
 
-use pocketmine\item\Item;
-use pocketmine\utils\UUID;
+use pocketmine\level\Position;
 
-interface Recipe{
+class FakeBlockMenu extends Position implements InventoryHolder{
 
-	/**
-	 * @return Item
-	 */
-	public function getResult();
+	private $inventory;
 
-	public function registerToCraftingManager();
+	public function __construct(Inventory $inventory, Position $pos){
+		$this->inventory = $inventory;
+		parent::__construct($pos->x, $pos->y, $pos->z, $pos->level);
+	}
 
-	/**
-	 * @return UUID
-	 */
-	public function getId();
-
-	public function setId(UUID $id);
+	public function getInventory(){
+		return $this->inventory;
+	}
 }

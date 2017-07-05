@@ -23,22 +23,14 @@ declare(strict_types=1);
 
 namespace pocketmine\inventory;
 
-use pocketmine\item\Item;
 use pocketmine\utils\UUID;
 
-interface Recipe{
+class MultiRecipe{
 
-	/**
-	 * @return Item
-	 */
-	public function getResult();
+	private $uuid;
 
-	public function registerToCraftingManager();
+	public function __construct(UUID $uuid){
+		$this->uuid = $uuid;
+	}
 
-	/**
-	 * @return UUID
-	 */
-	public function getId();
-
-	public function setId(UUID $id);
 }

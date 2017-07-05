@@ -24,21 +24,31 @@ declare(strict_types=1);
 namespace pocketmine\inventory;
 
 use pocketmine\item\Item;
-use pocketmine\utils\UUID;
 
-interface Recipe{
+interface Transaction{
+
+	/**
+	 * @return Inventory
+	 */
+	public function getInventory();
+
+	/**
+	 * @return int
+	 */
+	public function getSlot();
 
 	/**
 	 * @return Item
 	 */
-	public function getResult();
-
-	public function registerToCraftingManager();
+	public function getSourceItem();
 
 	/**
-	 * @return UUID
+	 * @return Item
 	 */
-	public function getId();
+	public function getTargetItem();
 
-	public function setId(UUID $id);
+	/**
+	 * @return float
+	 */
+	public function getCreationTime();
 }

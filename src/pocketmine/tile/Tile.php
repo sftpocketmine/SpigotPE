@@ -60,7 +60,8 @@ abstract class Tile extends Position{
     const PISTON = "PistonArm";
     const SIGN = "Sign";
     const SKULL = "Skull";
-
+	
+	const SHULKER_BOX = "Shulker Box";
 
 	public static $tileCount = 1;
 
@@ -99,6 +100,8 @@ abstract class Tile extends Position{
         self::registerTile(PistonArm::class);
 		self::registerTile(Sign::class);
 		self::registerTile(Skull::class);
+		
+		self::registerTiel(ShulkerBox::class);
 	}
 
 	/**

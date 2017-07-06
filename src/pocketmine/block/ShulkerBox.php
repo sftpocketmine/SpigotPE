@@ -34,7 +34,7 @@ use pocketmine\nbt\tag\StringTag;
 use pocketmine\tile\ShulkerBox as tiletest;
 use pocketmine\tile\Tile;
 
-class ShulkerBox extends Solid{
+class ShulkerBox extends Transparent{
 	
 	protected $id = self::SHULKER_BOX;
 	
@@ -132,7 +132,7 @@ class ShulkerBox extends Solid{
         }
 		
         return [
-            [Item::dirt, 0, 8], //dubug
+            [Item::dirt, 0, 1], //dubug
         ];
     }
 }
